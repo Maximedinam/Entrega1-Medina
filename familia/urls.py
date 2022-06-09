@@ -1,7 +1,14 @@
 from django.urls import path
-from . import views
+from familia.views import inicio
+from familia.views import profesor
+from familia.views import estudiante
+from familia.views import curso
+
 
 urlpatterns = [
-    path('',views.inicio, name='inicio' ),
-    path('miembro-de-familia/<str:pk>', views.miembro_de_familia, name='familiar'),
+    path('', inicio, name="Inicio" ),
+    path('profesor/' ,profesor, name="Profesor"),
+    path('estudiante/', estudiante, name="Estudiante"),
+    path('curso/', curso, name="Curso"),
+
 ]

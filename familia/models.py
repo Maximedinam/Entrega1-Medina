@@ -1,13 +1,17 @@
-from mailbox import NoSuchMailboxError
 from django.db import models
 
-# Create your models here.
-#{'id': 1, 'nombre': 'Julio Javier', 'apellido': 'Medina', 'descripcion': 'Soltero y con hijos.', 'edad': 52, 'fdn': '1968-09-16', 'parentesco': 'Padre'},
-
-class ModeloFamilia(models.Model):
+class Estudiante(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
     descripcion = models.CharField(max_length=60)
     edad = models.IntegerField(null=False)
     fdn = models.DateField(null=False)
-    parentesco = models.CharField(max_length=20, null=False)
+
+class Profesor(models.Model):
+    nombre = models.CharField(max_length=30)
+    edad = models.IntegerField(null=False)
+    fdn = models.DateField(null=False)
+
+class Curso(models.Model):
+    titulo = models.CharField(max_length=50)
+    duracion = models.IntegerField()
